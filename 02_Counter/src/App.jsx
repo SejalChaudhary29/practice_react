@@ -6,7 +6,7 @@ function App() {
 
   const addValue = () => {
     setCounter(counter + 1);
-    // console.log('value added' , counter)
+    // console.log('value added' , counter) 
   };
   const deleteValue = () => {
     if (counter == 0) {
