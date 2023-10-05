@@ -8,6 +8,7 @@ function App() {
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState("");
 const  passwordRef = useRef(null)
+//useCallback()
   const passwordGenerator = useCallback(() => {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -21,6 +22,7 @@ const  passwordRef = useRef(null)
     setPassword(pass);
   }, [length, numberAllowed, charAllowed, setPassword]);
 
+  
   const copyPassword = useCallback(()=>{
     passwordRef.current?.select()
 
@@ -63,7 +65,7 @@ window.navigator.clipboard.writeText(password)
                 setLength(e.target.value);
               }}
             />
-            <label className="text-white"> Lenghth: {length} </label>
+            <label className="text-white"> Lenghth: ({length}) </label>
           </div>
           <div className="flex items-center gap-x-1">
             <input
